@@ -1,3 +1,4 @@
+"use client";
 import { useFetch } from "@/utils/hooks/useFetch";
 import { MainStyle } from "./MainComponent.style";
 import Image from "next/image";
@@ -10,7 +11,7 @@ export const MainComponent = () => {
     <>
       <MainStyle>
         {data.map((item) => (
-          <div key={item.id}>
+          <main key={item.id}>
             <Image
               src={item.image}
               width={200}
@@ -18,8 +19,21 @@ export const MainComponent = () => {
               priority
               alt="rickandmortyapi.com"
             />
-            <p>{item.name}</p>
-          </div>
+            <section>
+              <div>
+                <h1>{item.name}</h1>
+                <p>{item.status}</p>
+              </div>
+              <div>
+                <span>Last known.location</span>
+                <p>{item.location.name}</p>
+              </div>
+              <div>
+                <span>First seen in:</span>
+                <p>{item.origin.name}</p>
+              </div>
+            </section>
+          </main>
         ))}
       </MainStyle>
     </>

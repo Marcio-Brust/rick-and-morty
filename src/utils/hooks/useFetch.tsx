@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 type DataProps = {
   id: string;
   name: string;
+  status: string;
   species: string;
   type: string;
   gender: string;
@@ -10,7 +11,7 @@ type DataProps = {
     name: string;
     url: string;
   };
-  lacation: {
+  location: {
     name: string;
     url: string;
   };
@@ -26,7 +27,7 @@ export function useFetch() {
     async function api(url: string) {
       const response = await fetch(url);
       const dataJson = await response.json();
-      setData(dataJson.results.map((item: any) => item).slice(0, 12));
+      setData(dataJson.results.map((item: any) => item).slice(0, 6));
     }
     api("https://rickandmortyapi.com/api/character?page=1");
   }, []);
