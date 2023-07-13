@@ -1,3 +1,12 @@
+import Head from "next/head";
+
 export default function Sobre() {
-  return <h1>Sobre</h1>;
+  return (
+    <>
+      <Head>
+        <title>Sobre</title>
+      </Head>
+      <h1>Sobre</h1>
+    </>
+  );
 }

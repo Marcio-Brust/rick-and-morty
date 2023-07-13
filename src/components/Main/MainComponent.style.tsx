@@ -10,7 +10,7 @@ export const MainStyle = styled.main`
   background: rgb(32, 35, 41);
 
   img {
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
   }
   main {
     display: flex;

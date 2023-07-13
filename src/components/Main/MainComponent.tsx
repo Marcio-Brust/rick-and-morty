@@ -1,4 +1,3 @@
-"use client";
 import { useFetch } from "@/utils/hooks/useFetch";
 import { MainStyle } from "./MainComponent.style";
 import Image from "next/image";

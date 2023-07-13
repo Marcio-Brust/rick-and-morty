@@ -8,6 +8,7 @@ export default function Document() {
         href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap"
       />
       <Head />
+
       <body>
         <Main />
         <NextScript />
