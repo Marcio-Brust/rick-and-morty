@@ -1,6 +1,7 @@
 import { useFetch } from "@/utils/hooks/useFetch";
 import { MainStyle } from "./MainComponent.style";
 import Image from "next/image";
+import { GoDotFill } from "react-icons/go";
 
 export const MainComponent = () => {
   const { data } = useFetch();
@@ -21,7 +22,21 @@ export const MainComponent = () => {
             <section>
               <div>
                 <h1>{item.name}</h1>
-                <p>{item.status}</p>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  {item.status === "Alive" ? (
+                    <GoDotFill size={20} fill="green " />
+                  ) : item.status === "unknown" ? (
+                    <GoDotFill size={20} fill="gray" />
+                  ) : (
+                    <GoDotFill size={20} fill="red" />
+                  )}
+                  <p>{item.status}</p>
+                </div>
               </div>
               <div>
                 <span>Last known.location</span>

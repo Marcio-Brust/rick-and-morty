@@ -6,7 +6,14 @@ import { useFetch } from "@/utils/hooks/useFetch";
 
 export const Button = () => {
   const { pages } = useFetch();
-  const { ChangePageNext, ChangePagePrev, cont } = useContext(PageContext);
+  const {
+    ChangePageNext,
+    ChangePagePrev,
+    cont,
+    handlePage,
+    contNext,
+    contPrev,
+  } = useContext(PageContext);
 
   const activeNext = cont === 42 ? true : false;
   const activePrev = cont === 1 ? true : false;
@@ -19,6 +26,7 @@ export const Button = () => {
       {pages
         .map((page, index) => (
           <button
+            onClick={handlePage}
             style={{
               padding: "20px",
               fontSize: "1rem",
@@ -33,7 +41,7 @@ export const Button = () => {
             {page}
           </button>
         ))
-        .slice(cont - 1, cont + 3)}
+        .slice(contPrev, contNext)}
       <ButtonStyle disabled={activeNext} onClick={ChangePageNext}>
         <VscTriangleRight style={{ color: "gold" }} size={30} />
       </ButtonStyle>
