@@ -12,15 +12,9 @@ type PageContextTypes = {
 
 const InitialValue = {
   cont: 1,
-  ChangePageNext: () => {
-    ``;
-  },
-  ChangePagePrev: () => {
-    ``;
-  },
-  handlePage: () => {
-    ("");
-  },
+  ChangePageNext: () => {},
+  ChangePagePrev: () => {},
+  handlePage: () => {},
   contNext: 4,
   contPrev: 0,
 };

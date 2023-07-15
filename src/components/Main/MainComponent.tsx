@@ -2,11 +2,22 @@ import { useFetch } from "@/utils/hooks/useFetch";
 import { MainStyle } from "./MainComponent.style";
 import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
+import { useEffect, useContext } from "react";
+import { PageContext } from "@/context/ContextPage";
+import initiScrollPage from "@/utils/functions/initiScrollPage";
 
 export const MainComponent = () => {
   const { data } = useFetch();
+  const { cont } = useContext(PageContext);
 
-  data.map((item) => item);
+  useEffect(() => {
+    window.scroll({
+      top: -100,
+      behavior: "instant",
+    });
+  }, [cont]);
+  initiScrollPage();
+
   return (
     <>
       <MainStyle>

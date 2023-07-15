@@ -34,7 +34,9 @@ export function useFetch() {
 
   useEffect(() => {
     async function api(url: string) {
-      const response = await fetch(url);
+      const response = await fetch(url, {
+        cache: "no-cache",
+      });
       const dataJson = await response.json();
       setData(dataJson.results.map((item: any) => item).slice(0, 6));
     }
