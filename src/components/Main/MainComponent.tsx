@@ -22,13 +22,13 @@ export const MainComponent = () => {
 
   return (
     <>
-      <MainStyle>
+      <MainStyle aria-expanded={media}>
         {data.map((item) => (
           <main key={item.id}>
             <Image
               src={item.image}
-              width={200}
-              height={200}
+              width={media ? "300" : "200"}
+              height={media ? "250" : "200"}
               priority
               alt="rickandmortyapi.com"
             />

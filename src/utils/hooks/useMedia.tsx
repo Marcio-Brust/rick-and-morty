@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 
 const useMedia = (media: string) => {
-  const [match, setMatch] = useState<boolean | null>(null);
+  const [match, setMatch] = useState<boolean>(false);
 
   useEffect(() => {
     function changeMatch() {
-      const { matches } = window.matchMedia(media);
-      setMatch(matches);
+      if (typeof window === "object") {
+        const { matches } = window.matchMedia(media);
+        setMatch(matches);
+      }
     }
     changeMatch();
-    window.addEventListener("resize", changeMatch);
+    const isBrowser = () => typeof window !== "undefined";
+    if (isBrowser()) window.addEventListener("resize", changeMatch);
 
     return () => {
-      window.removeEventListener("resize", changeMatch);
+      if (isBrowser()) window.removeEventListener("resize", changeMatch);
     };
   }, [media]);
 
