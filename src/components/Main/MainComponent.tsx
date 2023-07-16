@@ -5,10 +5,12 @@ import { GoDotFill } from "react-icons/go";
 import { useEffect, useContext } from "react";
 import { PageContext } from "@/context/ContextPage";
 import initiScrollPage from "@/utils/functions/initiScrollPage";
+import useMedia from "@/utils/hooks/useMedia";
 
 export const MainComponent = () => {
   const { data } = useFetch();
   const { cont } = useContext(PageContext);
+  const media = useMedia("(max-width: 50rem)");
 
   useEffect(() => {
     window.scroll({
