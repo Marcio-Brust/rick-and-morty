@@ -8,6 +8,7 @@ export const MainStyle = styled.main`
   gap: 20px;
   color: rgb(255, 255, 255);
   background: rgb(32, 35, 41);
+  padding-bottom: 100px;
 
   img {
     border-radius: 10px 0 0 10px;

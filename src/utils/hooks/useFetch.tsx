@@ -38,7 +38,7 @@ export function useFetch() {
         cache: "no-cache",
       });
       const dataJson = await response.json();
-      setData(dataJson.results.map((item: any) => item).slice(0, 6));
+      setData(dataJson.results.map((item: any) => item).slice(0, 10));
     }
     api(`https://rickandmortyapi.com/api/character?page=${cont.toString()}`);
   }, [cont]);

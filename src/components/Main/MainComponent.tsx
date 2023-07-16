@@ -40,7 +40,7 @@ export const MainComponent = () => {
                   }}
                 >
                   {item.status === "Alive" ? (
-                    <GoDotFill size={20} fill="green " />
+                    <GoDotFill size={20} fill="green" />
                   ) : item.status === "unknown" ? (
                     <GoDotFill size={20} fill="gray" />
                   ) : (
