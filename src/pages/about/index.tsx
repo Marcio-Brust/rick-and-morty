@@ -1,12 +1,12 @@
 import Head from "next/head";
 
-export default function Sobre() {
+export default function About() {
   return (
     <>
       <Head>
-        <title>Sobre</title>
+        <title>About</title>
       </Head>
-      <h1>Sobre</h1>
+      <h1>About</h1>
     </>
   );
 }

@@ -48,7 +48,9 @@ export const MainComponent = () => {
                   ) : (
                     <GoDotFill size={20} fill="red" />
                   )}
-                  <p>{item.status}</p>
+                  <p>
+                    {item.status} - {item.species}
+                  </p>
                 </div>
               </div>
               <div>
