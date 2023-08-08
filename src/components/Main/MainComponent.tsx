@@ -22,7 +22,7 @@ export const MainComponent = () => {
     if (typeof window === "object") {
       const showid = setInterval(() => {
         setShowCharacter(20);
-      }, 3000);
+      }, 2500);
       if (showCharacter === 20) {
         clearInterval(showid);
       }
