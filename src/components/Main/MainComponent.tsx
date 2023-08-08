@@ -20,9 +20,12 @@ export const MainComponent = () => {
 
   function initiScrollPage() {
     if (typeof window === "object") {
-      setInterval(() => {
+      const showid = setInterval(() => {
         setShowCharacter(20);
       }, 3000);
+      if (showCharacter === 20) {
+        clearInterval(showid);
+      }
     }
   }
   const isBrowser = () => typeof window !== "undefined";
