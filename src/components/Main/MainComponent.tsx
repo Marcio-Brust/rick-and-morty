@@ -12,15 +12,17 @@ export const MainComponent = () => {
   const { cont, setShowCharacter, showCharacter } = useContext(PageContext);
   const media = useMedia("(max-width: 50rem)");
 
+  useEffect(() => {
+    if (media) {
+      setShowCharacter(20);
+    }
+  }, [media, setShowCharacter]);
+
   function initiScrollPage() {
     if (typeof window === "object") {
-      if (media) {
+      setInterval(() => {
         setShowCharacter(20);
-      } else {
-        setInterval(() => {
-          setShowCharacter(20);
-        }, 3000);
-      }
+      }, 3000);
     }
   }
   const isBrowser = () => typeof window !== "undefined";
