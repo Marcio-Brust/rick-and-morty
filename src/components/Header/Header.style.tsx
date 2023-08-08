@@ -15,6 +15,7 @@ export const HeaderStyle = styled.header`
   div {
     display: flex;
     justify-content: space-between;
+    margin-right: 30px;
 
     a {
       padding: 20px 10px;

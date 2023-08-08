@@ -4,7 +4,6 @@ import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
 import { useEffect, useContext } from "react";
 import { PageContext } from "@/context/ContextPage";
-
 import useMedia from "@/utils/hooks/useMedia";
 
 export const MainComponent = () => {
