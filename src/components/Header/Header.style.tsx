@@ -1,19 +1,24 @@
 import styled from "styled-components";
 
 export const HeaderStyle = styled.header`
+  height: 250px;
+
+  h1 {
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 20px;
+  }
   nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: solid 1px #444;
   }
   div {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
     a {
       padding: 20px 10px;
+      height: 50px;
       color: initial;
       font-weight: 500;
 

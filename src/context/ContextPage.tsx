@@ -1,5 +1,10 @@
-import { constants } from "buffer";
-import { ReactNode, createContext, useState } from "react";
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  createContext,
+  useState,
+} from "react";
 
 type PageContextTypes = {
   cont: number;
@@ -8,6 +13,8 @@ type PageContextTypes = {
   handlePage: (event: React.MouseEvent<HTMLElement>) => void;
   contPrev: number;
   contNext: number;
+  showCharacter: number;
+  setShowCharacter: Dispatch<SetStateAction<number>>;
 };
 
 const InitialValue = {
@@ -17,6 +24,8 @@ const InitialValue = {
   handlePage: () => {},
   contNext: 4,
   contPrev: 0,
+  showCharacter: 10,
+  setShowCharacter: () => {},
 };
 
 interface ChildProps {
@@ -27,6 +36,7 @@ export const PageContext = createContext<PageContextTypes>(InitialValue);
 
 export function PageContexProvider({ children }: ChildProps) {
   const [cont, setCont] = useState<number | any>(InitialValue.cont);
+  const [showCharacter, setShowCharacter] = useState<number>(10);
 
   const contPrev = cont - 1;
   const contNext = cont + 3;
@@ -52,6 +62,8 @@ export function PageContexProvider({ children }: ChildProps) {
         contPrev,
         contNext,
         handlePage,
+        showCharacter,
+        setShowCharacter,
       }}
     >
       {children}

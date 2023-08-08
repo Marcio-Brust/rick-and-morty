@@ -4,13 +4,31 @@ import Image from "next/image";
 import { GoDotFill } from "react-icons/go";
 import { useEffect, useContext } from "react";
 import { PageContext } from "@/context/ContextPage";
-import initiScrollPage from "@/utils/functions/initiScrollPage";
+
 import useMedia from "@/utils/hooks/useMedia";
 
 export const MainComponent = () => {
   const { data } = useFetch();
-  const { cont } = useContext(PageContext);
+  const { cont, setShowCharacter, showCharacter } = useContext(PageContext);
   const media = useMedia("(max-width: 50rem)");
+
+  function initiScrollPage() {
+    if (typeof window === "object") {
+      setInterval(() => {
+        setShowCharacter(20);
+      },  5000);
+      console.log(showCharacter);
+    }
+  }
+  const isBrowser = () => typeof window !== "undefined";
+
+  if (isBrowser()) {
+    if (showCharacter === 20) {
+      window.removeEventListener("wheel", initiScrollPage);
+    } else {
+      window.addEventListener("wheel", initiScrollPage);
+    }
+  }
 
   useEffect(() => {
     window.scroll({
@@ -18,7 +36,6 @@ export const MainComponent = () => {
       behavior: "instant",
     });
   }, [cont]);
-  initiScrollPage();
 
   return (
     <>

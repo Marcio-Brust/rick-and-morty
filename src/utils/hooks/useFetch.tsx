@@ -30,7 +30,7 @@ export function useFetch() {
     41, 42,
   ];
 
-  const { cont } = useContext(PageContext);
+  const { cont, showCharacter } = useContext(PageContext);
 
   useEffect(() => {
     async function api(url: string) {
@@ -38,10 +38,12 @@ export function useFetch() {
         cache: "no-cache",
       });
       const dataJson = await response.json();
-      setData(dataJson.results.map((item: any) => item).slice(0, 10));
+      setData(
+        dataJson.results.map((item: any) => item).slice(0, showCharacter)
+      );
     }
     api(`https://rickandmortyapi.com/api/character?page=${cont.toString()}`);
-  }, [cont]);
+  }, [cont, showCharacter]);
 
   return { data, setData, pages };
 }

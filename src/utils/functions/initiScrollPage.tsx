@@ -1,10 +1,6 @@
-export default function initiScrollPage() {
-  if (typeof window === "object") {
-    console.log("oi");
-  }
-}
-const isBrowser = () => typeof window !== "undefined";
+import { PageContext } from "@/context/ContextPage";
+import { useContext, useEffect } from "react";
 
-if (isBrowser()) {
-  window.addEventListener("wheel", initiScrollPage);
-}
+export const initiScrollPage = (EventListener: MouseEvent) => {
+  return <></>;
+};
