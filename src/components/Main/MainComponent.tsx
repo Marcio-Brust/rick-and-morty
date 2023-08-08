@@ -14,10 +14,13 @@ export const MainComponent = () => {
 
   function initiScrollPage() {
     if (typeof window === "object") {
-      setInterval(() => {
+      if (media) {
         setShowCharacter(20);
-      },  5000);
-      console.log(showCharacter);
+      } else {
+        setInterval(() => {
+          setShowCharacter(20);
+        }, 3000);
+      }
     }
   }
   const isBrowser = () => typeof window !== "undefined";
@@ -35,7 +38,8 @@ export const MainComponent = () => {
       top: -100,
       behavior: "instant",
     });
-  }, [cont]);
+    setShowCharacter(10);
+  }, [cont, setShowCharacter]);
 
   return (
     <>
