@@ -4,7 +4,7 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About</title>
+        <title>Sobre</title>
       </Head>
       <h1>About</h1>
     </>

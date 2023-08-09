@@ -72,7 +72,7 @@ export const Header = () => {
             <p>Home</p>
           </Link>
           <Link href="/about">
-            <p>About</p>
+            <p>Sobre</p>
           </Link>
           <Link href="/login">
             <p>Login</p>

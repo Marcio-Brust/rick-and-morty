@@ -74,17 +74,43 @@ export const MainComponent = () => {
                     <GoDotFill size={20} fill="red" />
                   )}
                   <p>
-                    {item.status} - {item.species}
+                    {item.status === "Alive"
+                      ? "Vivo"
+                      : item.status === "unknown"
+                      ? "Desconhecido"
+                      : "Morto"}{" "}
+                    -{" "}
+                    {item.species === "Human"
+                      ? "Humano"
+                      : item.species === "Humanoid"
+                      ? "Humanóide"
+                      : item.species === "Robot"
+                      ? "Robô"
+                      : item.species === "Disease"
+                      ? "Doença"
+                      : item.species === "unknown"
+                      ? "Desconhecido"
+                      : item.species === "Mythologival Creature"
+                      ? "Criatura Mitológica"
+                      : item.species}
                   </p>
                 </div>
               </div>
               <div>
-                <span>Last known.location</span>
-                <p>{item.location.name}</p>
+                <span>Última localização conhecida</span>
+                <p>
+                  {item.location.name === "unknown"
+                    ? "Desconhecido"
+                    : item.location.name}
+                </p>
               </div>
               <div>
-                <span>First seen in:</span>
-                <p>{item.origin.name}</p>
+                <span>Visto pela primeira vez em:</span>
+                <p>
+                  {item.origin.name === "unknown"
+                    ? "Desconhecido"
+                    : item.origin.name}
+                </p>
               </div>
             </section>
           </main>
