@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="../../public/assets/favicon.ico" />
+        <link rel="icon" href="../../public/assets/favicon.ico" sizes="any" />
         <title>The Rick and Morty</title>
       </Head>
 
