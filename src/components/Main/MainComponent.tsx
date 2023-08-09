@@ -90,7 +90,7 @@ export const MainComponent = () => {
                       ? "Doença"
                       : item.species === "unknown"
                       ? "Desconhecido"
-                      : item.species === "Mythologival Creature"
+                      : item.species === "Mythological Creature"
                       ? "Criatura Mitológica"
                       : item.species}
                   </p>
